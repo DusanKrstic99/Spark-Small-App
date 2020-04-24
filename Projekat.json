@@ -1,0 +1,264 @@
+[
+  {
+    "ime": "Bing",
+    "prezime": "Oldacres",
+    "gender": "Male",
+    "predmeti": [
+      {
+        "id": 1,
+        "ocena": 10,
+        "semestar": 6,
+        "espb": 6
+      }
+    ]
+  },
+  {
+    "ime": "Mildrid",
+    "prezime": "Jermey",
+    "gender": "Female",
+    "predmeti": [
+      {
+        "id": 1,
+        "ocena": 7,
+        "semestar": 6,
+        "espb": 6
+      },
+      {
+        "id": 2,
+        "ocena": 8,
+        "semestar": 2,
+        "espb": 6
+      },
+      {
+        "id": 3,
+        "ocena": 10,
+        "semestar": 6,
+        "espb": 6
+      },
+      {
+        "id": 4,
+        "ocena": 8,
+        "semestar": 6,
+        "espb": 6
+      }
+    ]
+  },
+  {
+    "ime": "Jehu",
+    "prezime": "Matushevitz",
+    "gender": "Male",
+    "predmeti": [
+      {
+        "id": 1,
+        "ocena": 7,
+        "semestar": 3,
+        "espb": 6
+      },
+      {
+        "id": 2,
+        "ocena": 7,
+        "semestar": 3,
+        "espb": 6
+      }
+    ]
+  },
+  {
+    "ime": "Thomasine",
+    "prezime": "Franzotto",
+    "gender": "Female",
+    "predmeti": [
+      {
+        "id": 1,
+        "ocena": 6,
+        "semestar": 5,
+        "espb": 6
+      },
+      {
+        "id": 2,
+        "ocena": 6,
+        "semestar": 3,
+        "espb": 6
+      }
+    ]
+  },
+  {
+    "ime": "Aksel",
+    "prezime": "Keelan",
+    "gender": "Male",
+    "predmeti": [
+      {
+        "id": 1,
+        "ocena": 9,
+        "semestar": 6,
+        "espb": 6
+      },
+      {
+        "id": 2,
+        "ocena": 10,
+        "semestar": 3,
+        "espb": 6
+      },
+      {
+        "id": 3,
+        "ocena": 8,
+        "semestar": 4,
+        "espb": 6
+      },
+      {
+        "id": 4,
+        "ocena": 6,
+        "semestar": 6,
+        "espb": 6
+      },
+      {
+        "id": 5,
+        "ocena": 10,
+        "semestar": 6,
+        "espb": 6
+      }
+    ]
+  },
+  {
+    "ime": "Abby",
+    "prezime": "Von Brook",
+    "gender": "Female",
+    "predmeti": [
+      {
+        "id": 1,
+        "ocena": 8,
+        "semestar": 3,
+        "espb": 6
+      },
+      {
+        "id": 2,
+        "ocena": 8,
+        "semestar": 5,
+        "espb": 6
+      },
+      {
+        "id": 3,
+        "ocena": 6,
+        "semestar": 5,
+        "espb": 6
+      },
+      {
+        "id": 4,
+        "ocena": 6,
+        "semestar": 2,
+        "espb": 6
+      },
+      {
+        "id": 5,
+        "ocena": 8,
+        "semestar": 3,
+        "espb": 6
+      }
+    ]
+  },
+  {
+    "ime": "Gill",
+    "prezime": "Crowcroft",
+    "gender": "Male",
+    "predmeti": [
+      {
+        "id": 1,
+        "ocena": 9,
+        "semestar": 1,
+        "espb": 6
+      },
+      {
+        "id": 2,
+        "ocena": 10,
+        "semestar": 4,
+        "espb": 6
+      },
+      {
+        "id": 3,
+        "ocena": 6,
+        "semestar": 3,
+        "espb": 6
+      }
+    ]
+  },
+  {
+    "ime": "Livvy",
+    "prezime": "Crohan",
+    "gender": "Female",
+    "predmeti": [
+      {
+        "id": 1,
+        "ocena": 6,
+        "semestar": 4,
+        "espb": 6
+      },
+      {
+        "id": 2,
+        "ocena": 7,
+        "semestar": 3,
+        "espb": 6
+      },
+      {
+        "id": 3,
+        "ocena": 8,
+        "semestar": 6,
+        "espb": 6
+      },
+      {
+        "id": 4,
+        "ocena": 10,
+        "semestar": 6,
+        "espb": 6
+      }
+    ]
+  },
+  {
+    "ime": "Archaimbaud",
+    "prezime": "Langstone",
+    "gender": "Male",
+    "predmeti": [
+      {
+        "id": 1,
+        "ocena": 7,
+        "semestar": 4,
+        "espb": 6
+      },
+      {
+        "id": 2,
+        "ocena": 7,
+        "semestar": 6,
+        "espb": 6
+      },
+      {
+        "id": 3,
+        "ocena": 10,
+        "semestar": 6,
+        "espb": 6
+      },
+      {
+        "id": 4,
+        "ocena": 6,
+        "semestar": 6,
+        "espb": 6
+      },
+      {
+        "id": 5,
+        "ocena": 9,
+        "semestar": 5,
+        "espb": 6
+      }
+    ]
+  },
+  {
+    "ime": "Willyt",
+    "prezime": "Kohtler",
+    "gender": "Female",
+    "predmeti": [
+      {
+        "id": 1,
+        "ocena": 6,
+        "semestar": 6,
+        "espb": 6
+      }
+    ]
+  }
+]

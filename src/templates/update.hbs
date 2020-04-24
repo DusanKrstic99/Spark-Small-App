@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Početna</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/osobe">Osobe</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dodaj">Dodaj Osobe</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{{#if poruka}}
+    <div class="p-3 mb-2 bg-success text-white">{{poruka}}</div>
+{{/if}}
+{{#if poziv}}
+<div class="container-fluid">
+    <form action="/snimiIzmene" method="post" autocomplete="off">
+        <div class="form-group">
+        <label for="ime">Ime</label>
+        <input type="text" name="ime" class="form-control" id="ime" value="{{student.ime}}">
+    </div>
+        <div class="form-group">
+            <label for="prezime">Prezime</label>
+            <input type="text" name="prezime" class="form-control" id="prezime" value="{{student.prezime}}">
+        </div>
+        <div class="form-group">
+            <label for="gender">Pol</label>
+            <select id="gender" name="gender" class="form-control" value="{{student.gender}}">
+                <option value="Male" >Muski</option>
+                <option value="Female">Zenski</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-outline-dark">Izmeni studenta</button>
+    </form>
+</div>
+{{/if}}
+{{#if potvrda}}
+        <div class="p-3 mb-2 bg-success text-white">{{potvrda}}</div>
+{{/if}}
+{{#if izmena}}
+    <div class="container-fluid">
+        <form action="/snimiPredmet" method="post" autocomplete="off">
+            <div class="form-group">
+                <label for="ime">Ime</label>
+                <input type="text" name="ime" class="form-control" id="ime" value="{{student.ime}}">
+            </div>
+            <div class="form-group">
+                <label for="Ocena">Ocena</label>
+                <input type="number" min="6" max="10" name="ocena" class="form-control" id="ocena" >
+            </div>
+            <div class="form-group">
+                <label for="Semestar">Semestar</label>
+                <input type="number" min="1" max="6" name="semestar" class="form-control" id="semestar" >
+            </div>
+            <div class="form-group">
+                <label for="espb">ESPB poena</label>
+                <select id="espb" name="espb" class="form-control">
+                    <option value="4" >4</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-outline-dark">Dodaj predmet</button>
+        </form>
+    </div>
+{{/if}}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1:5000/js/jquery-3.3.1.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

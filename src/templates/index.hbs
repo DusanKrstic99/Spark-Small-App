@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Početna</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/osobe">Osobe</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dodaj">Dodaj Osobe</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/izmeni">Izmeni</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
+    {{#if ja}}
+        <h2 align="center">{{ja}}</h2>
+        <h2 align="center">Student Dušan Krstić RT-29/17</h2>
+    {{/if}}
+    {{#if osobe}}
+        <input type="number" min="1" max="10" placeholder="Min" name="min" id="min">
+        <input type="number" min="1" max="10" placeholder="Max" name="max"id="max">
+        <button id="filtriraj" >Filtriraj</button>
+
+        <div id="prvo">
+            {{#each osobe}}
+                <div class="row" style="border: 3px solid blue">
+                    <div class="col-md-2">Ime</div>
+                    <div class="col-md-2">Prezime</div>
+                    <div class="col-md-2">Pol</div>
+
+                </div>
+                <div class="row" style="background-color: blue;font-weight: bold">
+                    <div class="col-md-2">{{this.ime}}</div>
+                    <div class="col-md-2">{{this.prezime}}</div>
+                    <div class="col-md-2">{{this.gender}}</div>
+                    <div class="col-md-2" ><a href="/izmeni/{{this.ime}}" style="color: black;font-weight: bold;background-color: greenyellow">Izmeni</a></div>
+                    <div class="col-md-2"><a href="/DodajPredmet/{{this.ime}}" style="color: black;font-weight: bold;background-color: greenyellow">Dodaj Predmet</a></div>
+                </div>
+                            {{#each this.predmeti}}
+                                <div class="row" style="border: 3px solid red">
+                                <div class="col-md-2" >ID Predmeta</div>
+                                <div class="col-md-2">Ocena</div>
+                                <div class="col-md-2">Semestar</div>
+                                <div class="col-md-2">ESPB</div>
+                                </div>
+                                <div class="row" style="background-color: darkred; color: white">
+                                <div class="col-md-2">{{this.id}}</div>
+                                <div class="col-md-2">{{this.ocena}}</div>
+                                <div class="col-md-2">{{this.semestar}}</div>
+                                <div class="col-md-2">{{this.espb}}</div>
+                                </div>
+                            {{/each}}
+            {{/each}}
+        </div>
+    {{/if}}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1:5000/js/jquery-3.3.1.min.js"></script>
+<script>
+    pretrazi=document.querySelector("#filtriraj");
+    pretrazi.onclick=function() {
+        $.ajax({
+            url: "/filter",
+            method: "POST",
+            data: {"min":document.getElementById("min").value,"max":document.getElementById("max").value},
+            success: function (response) {
+                console.log(response);
+                prvo = " ";
+                nePrvo = document.getElementById("prvo");
+                nePrvo.innerHTML = " ";
+                for (i = 0; i < response.length; i++) {
+                    prvo += `<div class="row" style="border: 3px solid blue">
+                                    <div class="col-md-2">Ime</div>
+                                    <div class="col-md-2">Prezime</div>
+                                    <div class="col-md-2">Pol</div>
+                              </div>
+                              <div class="row" style="background-color: blue;font-weight: bold">
+                                     <div class="col-md-2">${response[i].ime}</div>
+                                     <div class="col-md-2">${response[i].prezime}</div>
+                                     <div class="col-md-2">${response[i].gender}</div>
+        <div class="col-md-2" ><a href="/izmeni/${response[i].ime}" style="color: black;font-weight: bold;background-color: greenyellow">Izmeni</a></div>
+         <div class="col-md-2" ><a href="/DodajPredmet/${response[i].ime}" style="color: black;font-weight: bold;background-color: greenyellow">Dodaj Predmet</a></div>
+                                </div>`
+                    for (j = 0; j < response[i].predmeti.length; j++)
+                        prvo += ` <div class="row" style="border: 3px solid red">
+                                  <div class="col-md-2" >ID Predmeta</div>
+                                  <div class="col-md-2">Ocena</div>
+                                  <div class="col-md-2">Semestar</div>
+                                  <div class="col-md-2">ESPB</div>
+                                  </div>
+                                  <div class="row" style="background-color: darkred; color: white">
+                                  <div class="col-md-2">${response[i].predmeti[j].id}</div>
+                                  <div class="col-md-2">${response[i].predmeti[j].ocena}</div>
+                                  <div class="col-md-2">${response[i].predmeti[j].semestar}</div>
+                                  <div class="col-md-2">${response[i].predmeti[j].espb}</div>
+                                  </div>`
+                }
+                nePrvo.innerHTML = prvo;}
+        });
+    }
+
+
+</script>
+</body>
+</html>
